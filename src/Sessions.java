@@ -11,7 +11,7 @@ public class Sessions {
 
     private By loggedInUserHeaderLocator = By.id("WelcomeStatement");
     private By loggedInUserNameLocator = By.tagName("strong");
-    private By HomePageLinkLocator = By.name("Home");
+    private By HomePageLinkLocator = By.partialLinkText("Home");
 
     public Sessions(WebDriver driver) {
         this.driver = driver;

@@ -16,6 +16,7 @@ public class LoginTest
     private WebDriver driver;
     private LoginScreen loginPage;
     private Sessions sessionsPage;
+    private Dashboard dashboard;
 
     @BeforeMethod
     public void setUp()
@@ -26,6 +27,7 @@ public class LoginTest
         driver.manage().window().maximize();
         loginPage = new LoginScreen(driver);
         sessionsPage = new Sessions(driver);
+        dashboard = new Dashboard(driver);
     }
 
     @Test
@@ -58,6 +60,9 @@ public class LoginTest
     {
         LogintoeSign();
         sessionsPage.GotoHomePagefromBreadCrumb();
+        String url = dashboard.GetDashboardURL();
+
+        Assert.assertTrue(url.contains("Dashboard"));
     }
 
     @AfterMethod
